@@ -1,18 +1,18 @@
-from flask import Flask
-
+from flask import Flask, render_template
 app = Flask(__name__)
 
+
+
 @app.route('/')
-def home():
-    return "Welcome to the Homepage!"
+def index():
+    return render_template('index.html')
 
-@app.route('/about')
-def about():
-    return "This is the About Page."
+@app.route('/form')
+def form():
+    return render_template('form.html')
 
-@app.route('/contact')
-def contact():
-    return "Contact us at: info@example.com."
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
